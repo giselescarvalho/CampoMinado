@@ -54,7 +54,7 @@ public class Campo {
         if(!aberto && !marcado){
             aberto = true;
             if(minado){
-                throw new ExplosaException();
+                //TODO Implementar nova versao no lugar de throw new ExplosaException();
             }
 
             if (vizinhancaSegura()){
@@ -115,22 +115,6 @@ public class Campo {
         minado = false;
         marcado = false;
     }
-
-    public String toString(){
-        if(marcado){
-            return "x";
-        } else if (aberto && minado){
-            return "*";
-        } else if ((aberto && minasNaVizinhanca() > 0)){
-            return Long.toString(minasNaVizinhanca());
-        } else if(aberto){
-            return " ";
-        } else {
-            return "?";
-        }
-
-    }
-
 
 
 }
